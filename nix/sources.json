@@ -1,0 +1,38 @@
+{
+    "myNixPythonPackages": {
+        "branch": "main",
+        "description": null,
+        "homepage": null,
+        "owner": "AtilaSaraiva",
+        "repo": "myNixPythonPackages",
+        "rev": "3e8363972b725c17700b1768fd2e34417f552cb7",
+        "sha256": "03ap7l92v9012g2bvw8h3zj4pdzlyfz6kr0vysy5fvzvp9n61n76",
+        "type": "tarball",
+        "url": "https://github.com/AtilaSaraiva/myNixPythonPackages/archive/3e8363972b725c17700b1768fd2e34417f552cb7.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "351d8bc316bf901a81885bab5f52687ec8ccab6e",
+        "sha256": "1yzhz7ihkh6p2sxhp3amqfbmm2yqzaadqqii1xijymvl8alw5rrr",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/351d8bc316bf901a81885bab5f52687ec8ccab6e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "nixos-unstable",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "636051e353461f073ac55d5d42c1ed062a345046",
+        "sha256": "1706lmcnihphm1c7i91f924r47rb26pi3smc0qsld2zxc9qlz4fc",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/636051e353461f073ac55d5d42c1ed062a345046.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
