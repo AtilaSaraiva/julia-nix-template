@@ -5,7 +5,7 @@ with import sources.nixpkgs {
   ];
 };
 
-(let
+let
   my-python-packages = python-packages: with python-packages; [
     matplotlib
     h5py
@@ -13,14 +13,18 @@ with import sources.nixpkgs {
   ];
   python-with-my-packages = python3.withPackages my-python-packages;
 in
-  buildFHSUserEnv {
-  name = "simple-julia-env";
-  targetPkgs = pkgs: (with pkgs;
-  [
-    julia-bin
+mkShell {
+  buildInputs = [
     python-with-my-packages
-  ]);
-  runScript = ''
-    bash -c "source ./env && bash"
+    jupyter
+    julia-bin
+    gcc
+  ];
+
+  shellHooks = ''
+    export JULIA_DEPOT_PATH=/var/tmp/$PWD/julia
+    mkdir -p $JULIA_DEPOT_PATH
+    julia -e 'using Pkg; Pkg.add("Revise"); Pkg.activate("."); Pkg.precompile()'
+    mkdir -p $JULIA_DEPOT_PATH/config/ && echo "using Revise" >> $JULIA_DEPOT_PATH/config/startup.jl
   '';
-}).env
+}
